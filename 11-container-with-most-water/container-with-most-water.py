@@ -10,13 +10,13 @@ class Solution:
                 area = length * breadth
                 TotalArea = max(TotalArea, area)
                 left += 1
-            if height[left] > height[right]:
+            elif height[left] > height[right]:
                 length = height[right]
                 breadth = right - left 
                 area = length * breadth
                 TotalArea = max(TotalArea, area)
                 right -= 1
-            if height[left] == height[right]:
+            else:
                 length = height[left]
                 breadth = right - left 
                 area = length * breadth
