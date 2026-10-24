@@ -4,23 +4,10 @@ class Solution:
         right = len(height) - 1
         TotalArea = 0
         while left < right:
+            area = min(height[left], height[right]) * (right - left)
+            TotalArea = max(TotalArea, area)
             if height[left] < height[right]:
-                length = height[left]
-                breadth = right - left 
-                area = length * breadth
-                TotalArea = max(TotalArea, area)
                 left += 1
-            elif height[left] > height[right]:
-                length = height[right]
-                breadth = right - left 
-                area = length * breadth
-                TotalArea = max(TotalArea, area)
-                right -= 1
             else:
-                length = height[left]
-                breadth = right - left 
-                area = length * breadth
-                TotalArea = max(TotalArea, area)
-                left += 1
                 right -= 1
         return TotalArea
